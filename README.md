@@ -51,7 +51,7 @@ Taking photos of documents (notes, receipts, pages) with a phone often results i
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/document-scanner-enhancer.git
+git clone https://github.com/zetroretron/document-scanner-enhancer.git
 cd document-scanner-enhancer
 
 # 2. Install dependencies
