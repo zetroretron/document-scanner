@@ -1,15 +1,13 @@
-# 📄 Document Scanner & Enhancer
+# Document Scanner
 
 A computer vision tool that transforms photos of documents into clean, readable scanned copies — built with Python and OpenCV.
-
-> **BYOP Project** — SE2005 Computer Vision, IITM BS Degree
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python)
 ![OpenCV](https://img.shields.io/badge/OpenCV-4.5+-green?logo=opencv)
 
 ---
 
-## 🎯 Problem Statement
+## Problem Statement
 
 Taking photos of documents (notes, receipts, pages) with a phone often results in skewed, poorly lit, hard-to-read images. This project solves that by automatically:
 
@@ -17,7 +15,7 @@ Taking photos of documents (notes, receipts, pages) with a phone often results i
 2. **Correcting** the perspective to produce a flat, top-down view
 3. **Enhancing** the image for clean, readable output
 
-## ✨ Features
+## Features
 
 - **Automatic document detection** using Canny edge detection + contour analysis
 - **Perspective correction** (4-point transform) to flatten skewed documents
@@ -28,20 +26,7 @@ Taking photos of documents (notes, receipts, pages) with a phone often results i
 - **Batch processing** — process all modes at once with `--all-modes`
 - **Visual pipeline** — saves intermediate steps (edges, contours, warped) for analysis
 
-## 🧠 Course Concepts Applied
-
-| Module | Concept | Where Used |
-|--------|---------|------------|
-| 1 | Image I/O, grayscale conversion, resizing | `load_image()`, `preprocess()` |
-| 2 | Gaussian blur, noise removal | `preprocess()` |
-| 2 | CLAHE histogram equalization | `_enhance_color()`, `_enhance_sharp()` |
-| 2 | Morphological operations (opening, closing) | `_enhance_bw()`, `preprocess()` |
-| 2 | Power-law (gamma) correction | `_gamma_correction()` |
-| 3 | Canny edge detection | `preprocess()` |
-| 3 | Contour detection & approximation | `find_document()` |
-| 4 | Adaptive thresholding (segmentation) | `_enhance_bw()` |
-
-## 🚀 Setup & Installation
+## Setup & Installation
 
 ### Prerequisites
 - Python 3.8 or higher
@@ -51,8 +36,8 @@ Taking photos of documents (notes, receipts, pages) with a phone often results i
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/zetroretron/document-scanner-enhancer.git
-cd document-scanner-enhancer
+git clone https://github.com/zetroretron/document-scanner.git
+cd document-scanner
 
 # 2. Install dependencies
 pip install -r requirements.txt
@@ -64,7 +49,7 @@ python create_samples.py
 python main.py sample_images/document.jpg
 ```
 
-## 📖 Usage
+## Usage
 
 ### Basic Usage
 
@@ -107,10 +92,10 @@ output/
 ├── photo_scanned_bw.jpg      # Final scanned output
 ├── photo_edges.jpg            # Edge detection result
 ├── photo_contour.jpg          # Detected document boundary
-└── photo_warped.jpg           # Perspective-corrected image
+├── photo_warped.jpg           # Perspective-corrected image
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── scanner.py          # Core scanning & enhancement pipeline
@@ -124,7 +109,7 @@ output/
 └── .gitignore
 ```
 
-## 🔧 How It Works
+## How It Works
 
 ```
 Input Photo → Grayscale → Gaussian Blur → Canny Edges → Find Contours
@@ -137,6 +122,6 @@ Input Photo → Grayscale → Gaussian Blur → Canny Edges → Find Contours
 4. **Perspective Transform** — Warp the document to a flat rectangle
 5. **Enhance** — Apply thresholding/CLAHE/sharpening based on chosen mode
 
-## 📝 License
+## License
 
-This project was created as part of the IITM BS Degree coursework.
+MIT License
